@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Artem Poznanski — Cinematographer & Documentary DP. Tribeca 2024, Odesa IFF 2025. Founder of POZNANSKI.">
+<meta name="author" content="Artem Poznanski">
+<meta name="theme-color" content="#292728">
+
+<!-- Open Graph (Facebook, LinkedIn, Telegram) -->
+<meta property="og:title" content="POZNANSKI — Artem Poznanski">
+<meta property="og:description" content="Cinematographer & Documentary DP. Tribeca 2024, Odesa IFF 2025.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://poznanski.team">
+<meta property="og:image" content="https://poznanski.team/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="POZNANSKI">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="POZNANSKI — Artem Poznanski">
+<meta name="twitter:description" content="Cinematographer & Documentary DP. Tribeca 2024, Odesa IFF 2025.">
+<meta name="twitter:image" content="https://poznanski.team/assets/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+<title>POZNANSKI — Artem Poznanski</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap">
+<style>
+  :root {
+    --graphite: #292728;
+    --white: #ffffff;
+    --gray-50: #f7f7f7;
+    --gray-200: #e5e5e5;
+    --gray-500: #888;
+    --accent: #e85d3a;
+    --max-width: 1400px;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--graphite);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* === NAV === */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(41, 39, 40, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--white);
+    transition: background 0.3s;
+  }
+
+  nav .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  nav .logo img {
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  nav ul a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+  }
+
+  nav ul a:hover {
+    opacity: 0.6;
+  }
+
+  .lang-toggle {
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border: 1px solid currentColor;
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    color: inherit;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .lang-toggle:hover {
+    background: currentColor;
+    color: var(--graphite);
+  }
+
+  /* Burger button — hidden on desktop */
+  .burger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    color: inherit;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    z-index: 101;
+  }
+
+  .burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .burger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem var(--gutter);
+    }
+
+    nav ul {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 75%;
+      max-width: 320px;
+      background: var(--graphite);
+      color: var(--white);
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 4rem 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+      z-index: 99;
+    }
+
+    nav ul.open {
+      transform: translateX(0);
+    }
+
+    nav ul a {
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+
+    .burger {
+      display: flex;
+    }
+
+    /* Overlay behind menu when open */
+    body.menu-open::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 98;
+      animation: fadeIn 0.3s ease;
+    }
+  }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--white);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--graphite);
+    z-index: 0;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(232, 93, 58, 0.08), transparent 60%),
+      linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+  }
+
+  .hero-bg .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: var(--gutter);
+    padding-bottom: clamp(3rem, 8vh, 6rem);
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    animation: slideUp 1s 0.2s both cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-name {
+    font-size: clamp(3rem, 11vw, 9rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+    animation: slideUp 1.2s 0.4s both cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-role {
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    max-width: 40rem;
+    margin-bottom: 2rem;
+    animation: slideUp 1s 0.7s both cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-markers {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: slideUp 1s 0.9s both cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-markers span {
+    position: relative;
+  }
+
+  .hero-markers span:not(:last-child)::after {
+    content: '·';
+    position: absolute;
+    right: -1.25rem;
+    opacity: 0.5;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 1.5rem;
+    right: var(--gutter);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+  }
+
+  /* === SECTIONS === */
+  section {
+    padding: clamp(4rem, 12vh, 8rem) var(--gutter);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--gray-500);
+    margin-bottom: 3rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 2.5rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  /* === WORKS === */
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .work {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--gray-50);
+    aspect-ratio: 16/9;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .work:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Asymmetric grid */
+  .work:nth-child(1) { grid-column: span 7; }
+  .work:nth-child(2) { grid-column: span 5; }
+  .work:nth-child(3) { grid-column: span 5; }
+  .work:nth-child(4) { grid-column: span 7; }
+  .work:nth-child(5) { grid-column: span 6; }
+  .work:nth-child(6) { grid-column: span 6; }
+
+  @media (max-width: 900px) {
+    .work {
+      grid-column: span 12 !important;
+    }
+  }
+
+  .work-thumb {
+    position: absolute;
+    inset: 0;
+    background: var(--graphite);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: filter 0.4s;
+  }
+
+  .work-thumb img,
+  .work-thumb video,
+  .work-thumb iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+  }
+
+  .work:hover .work-thumb {
+    filter: brightness(0.4);
+  }
+
+  .work-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    color: var(--white);
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .work-meta {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-title {
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .work-role {
+    font-size: 0.85rem;
+    font-weight: 300;
+    opacity: 0.85;
+    margin-top: 0.3rem;
+  }
+
+  /* === BIO === */
+  .bio {
+    background: var(--graphite);
+    color: var(--white);
+    margin: 0;
+    max-width: 100%;
+    padding: clamp(5rem, 14vh, 9rem) var(--gutter);
+  }
+
+  .bio-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  @media (max-width: 800px) {
+    .bio-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .bio-text h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+  }
+
+  .bio-text p {
+    font-size: clamp(1rem, 1.3vw, 1.125rem);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 36rem;
+  }
+
+  .bio-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+
+  .stat {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 1.25rem;
+  }
+
+  .stat-num {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .bio-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid currentColor;
+    transition: gap 0.3s ease;
+  }
+
+  .bio-cta:hover {
+    gap: 1.25rem;
+  }
+
+  .bio-cta::after {
+    content: '→';
+    transition: transform 0.3s;
+  }
+
+  /* === CONTACT === */
+  .contact {
+    text-align: center;
+    padding: clamp(5rem, 14vh, 10rem) var(--gutter);
+    position: relative;
+  }
+
+  .contact h2 {
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-email {
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    font-weight: 400;
+    color: var(--graphite);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.3rem;
+    transition: color 0.2s;
+  }
+
+  .contact-email:hover {
+    color: var(--accent);
+  }
+
+  .contact-channels {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .contact-channels a {
+    color: var(--graphite);
+    text-decoration: none;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid transparent;
+    transition: border 0.2s;
+  }
+
+  .contact-channels a:hover {
+    border-bottom-color: var(--graphite);
+  }
+
+  .contact-quick {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .quick-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    background: var(--graphite);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .quick-btn:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* === FOOTER === */
+  footer {
+    border-top: 1px solid var(--gray-200);
+    padding: 2rem var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    letter-spacing: 0.1em;
+  }
+
+  footer .logo-small {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  footer .logo-small img {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* === LANG TOGGLE LOGIC === */
+  [data-lang-content="uk"] { display: none; }
+  html[data-lang="uk"] [data-lang-content="uk"] { display: revert; }
+  html[data-lang="uk"] [data-lang-content="en"] { display: none; }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#top" class="logo" aria-label="POZNANSKI — home">
+    <img src="assets/logo-white.png" alt="POZNANSKI">
+  </a>
+  <ul id="nav-menu">
+    <li><a href="#works" data-lang-content="en">Work</a><a href="#works" data-lang-content="uk">Роботи</a></li>
+    <li><a href="about.html" data-lang-content="en">About</a><a href="about.html" data-lang-content="uk">Про</a></li>
+    <li><a href="#contact" data-lang-content="en">Contact</a><a href="#contact" data-lang-content="uk">Контакти</a></li>
+  </ul>
+  <button class="lang-toggle" onclick="toggleLang()">
+    <span data-lang-content="en">UA</span>
+    <span data-lang-content="uk">EN</span>
+  </button>
+  <button class="burger" id="burger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="grain"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span data-lang-content="en">PORTFOLIO · 2010—2026</span>
+      <span data-lang-content="uk">ПОРТФОЛІО · 2010—2026</span>
+    </div>
+    <h1 class="hero-name">Artem<br>Poznanski</h1>
+    <p class="hero-role">
+      <span data-lang-content="en">Cinematographer & Documentary DP</span>
+      <span data-lang-content="uk">Кінематографіст і документальний оператор</span>
+    </p>
+    <div class="hero-markers">
+      <span>Tribeca 2024</span>
+      <span>
+        <span data-lang-content="en">Odesa IFF 2025</span>
+        <span data-lang-content="uk">Одеський МКФ 2025</span>
+      </span>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span data-lang-content="en">Scroll</span>
+    <span data-lang-content="uk">Гортати</span>
+  </div>
+</section>
+
+<section id="works">
+  <div class="section-label">
+    <span data-lang-content="en">Selected Work</span>
+    <span data-lang-content="uk">Вибрані роботи</span>
+  </div>
+
+  <div class="works-grid">
+
+    <!-- Work 1: What is POZNANSKI? — Brand reel -->
+    <a class="work" href="https://vimeo.com/1192903454" data-vimeo="1192903454" target="_blank" rel="noopener">
+      <div class="work-thumb">
+        <img src="https://vumbnail.com/1192903454.jpg" alt="What is POZNANSKI? — brand reel preview" loading="lazy">
+      </div>
+      <div class="work-info">
+        <div class="work-meta">2010—2026 · Brand</div>
+        <div class="work-title">What is POZNANSKI?</div>
+        <div class="work-role">
+          <span data-lang-content="en">Brand reel · Weddings, events, commercial</span>
+          <span data-lang-content="uk">Брендовий ролик · Весілля, події, комерція</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Work 2: Cinematography Reel — DP reel -->
+    <a class="work" href="https://vimeo.com/1192897622" data-vimeo="1192897622" target="_blank" rel="noopener">
+      <div class="work-thumb">
+        <img src="https://vumbnail.com/1192897622.jpg" alt="Cinematography Reel preview" loading="lazy">
+      </div>
+      <div class="work-info">
+        <div class="work-meta">2022—2026 · Reel</div>
+        <div class="work-title">Cinematography Reel</div>
+        <div class="work-role">
+          <span data-lang-content="en">Selected work · Cinematographer & Documentary DP</span>
+          <span data-lang-content="uk">Добірка робіт · Кінематографіст і документальний оператор</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Work 3: In Thanks We Trust -->
+    <a class="work" href="https://vimeo.com/1192904635/e78276aee8" data-vimeo="1192904635" data-vimeo-hash="e78276aee8" target="_blank" rel="noopener">
+      <div class="work-thumb">
+        <img src="https://i.vimeocdn.com/video/2158267198-02b137d71a30ee4fa32c7693fbcafde4a0d65b08c791d8b61b49f22c0654b2aa-d?mw=1280" alt="In Thanks We Trust trailer preview" loading="lazy">
+      </div>
+      <div class="work-info">
+        <div class="work-meta">2025 · Documentary</div>
+        <div class="work-title">In Thanks We Trust</div>
+        <div class="work-role">
+          <span data-lang-content="en">Cinematographer · Odesa IFF premiere 2025</span>
+          <span data-lang-content="uk">Оператор · Прем'єра Одеський МКФ 2025</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Work 4: Soldiers of Song -->
+    <a class="work" href="https://vimeo.com/1002569297" data-vimeo="1002569297" target="_blank" rel="noopener">
+      <div class="work-thumb">
+        <img src="https://vumbnail.com/1002569297.jpg" alt="Soldiers of Song teaser preview" loading="lazy">
+      </div>
+      <div class="work-info">
+        <div class="work-meta">2024 · Documentary</div>
+        <div class="work-title">Soldiers of Song</div>
+        <div class="work-role">
+          <span data-lang-content="en">Lead DP · Tribeca premiere 2024</span>
+          <span data-lang-content="uk">Lead DP · Прем'єра Tribeca 2024</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Work 5: Voice in the Water -->
+    <a class="work" href="https://vimeo.com/1192907232" data-vimeo="1192907232" target="_blank" rel="noopener">
+      <div class="work-thumb">
+        <img src="https://vumbnail.com/1192907232.jpg" alt="Voice in the Water — author film preview" loading="lazy">
+      </div>
+      <div class="work-info">
+        <div class="work-meta">2023 · Short film</div>
+        <div class="work-title">Voice in the Water</div>
+        <div class="work-role">
+          <span data-lang-content="en">Author video · Director & DP</span>
+          <span data-lang-content="uk">Авторське відео · Режисер і оператор</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Work 6: Frontline Studio -->
+    <a class="work" href="https://youtu.be/Ec52cyHlRFQ" data-youtube="Ec52cyHlRFQ" target="_blank" rel="noopener">
+      <div class="work-thumb">
+        <img src="https://i.ytimg.com/vi/Ec52cyHlRFQ/maxresdefault.jpg" alt="Frontline Studio Season 2 trailer preview" loading="lazy">
+      </div>
+      <div class="work-info">
+        <div class="work-meta">2025 · Music series</div>
+        <div class="work-title">
+          <span data-lang-content="en">Frontline Studio · Season 2</span>
+          <span data-lang-content="uk">Фронтова студія · 2 сезон</span>
+        </div>
+        <div class="work-role">
+          <span data-lang-content="en">Lead DP · 16 episodes, 16 brigades</span>
+          <span data-lang-content="uk">Lead DP · 16 епізодів, 16 бригад</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="bio" id="about">
+  <div class="bio-inner">
+    <div class="bio-text">
+      <h2>
+        <span data-lang-content="en">Sixteen years.<br>One path.</span>
+        <span data-lang-content="uk">Шістнадцять років.<br>Один шлях.</span>
+      </h2>
+
+      <div data-lang-content="en">
+        <p>I'm a cinematographer and documentary DP based in Kyiv. POZNANSKI is the name and the practice — cinema, documentary, production. It started in 2010 as Vivat!, an event agency in Sumy. In 2018 I rebranded as POZNANSKIteam and moved to Kyiv.</p>
+        <p>From 2023 to 2026 I served in the Ukrainian Armed Forces as Head Operator of Cultural Forces. Awarded the Medal "For Distinguished Service, 3rd Class." Lead DP on "Soldiers of Song" (Tribeca 2024) and cinematographer on "In Thanks We Trust" (Odesa IFF 2025, featuring Sean Penn and Sting).</p>
+        <p>I shoot weddings since 2010 — sixteen years and counting — under the @poznanskilove brand. Love stories and weddings, worldwide.</p>
+      </div>
+
+      <div data-lang-content="uk">
+        <p>Я кінематографіст і документальний оператор, базуюсь у Києві. POZNANSKI — це ім'я і практика: кінематограф, документалка, продакшн. Почалося в 2010-му як Vivat!, івент-агенція у Сумах. У 2018-му зробив ребрендинг і переїхав до Києва.</p>
+        <p>З 2023 по 2026 рік служив у ЗСУ як Головний оператор Культурних сил. Нагороджений медаллю «За особливу службу III ступеня». Lead DP «Soldiers of Song» (Tribeca 2024), оператор «In Thanks We Trust» (Одеський МКФ 2025, з Шоном Пенном і Стінгом).</p>
+        <p>Знімаю весілля з 2010-го — шістнадцять років і триває — під брендом @poznanskilove. Love stories and weddings, по всьому світу.</p>
+      </div>
+
+      <a href="about.html" class="bio-cta">
+        <span data-lang-content="en">Full bio</span>
+        <span data-lang-content="uk">Повна біографія</span>
+      </a>
+    </div>
+
+    <div class="bio-stats">
+      <div class="stat">
+        <div class="stat-num">16</div>
+        <div class="stat-label">
+          <span data-lang-content="en">Years in craft</span>
+          <span data-lang-content="uk">Років у ремеслі</span>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">22</div>
+        <div class="stat-label">
+          <span data-lang-content="en">Countries filmed</span>
+          <span data-lang-content="uk">Країни зйомок</span>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2</div>
+        <div class="stat-label">
+          <span data-lang-content="en">Major festivals</span>
+          <span data-lang-content="uk">Великі фестивалі</span>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">
+          <span data-lang-content="en">Years on frontline</span>
+          <span data-lang-content="uk">Роки на фронті</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>
+    <span data-lang-content="en">Let's talk.</span>
+    <span data-lang-content="uk">Поспілкуємось.</span>
+  </h2>
+
+  <a class="contact-email" href="mailto:poznanskiteam@gmail.com">poznanskiteam@gmail.com</a>
+
+  <div class="contact-channels">
+    <a href="https://www.linkedin.com/in/artem-poznanski-a6116361" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/poznanskiy_production/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.instagram.com/poznanskilove/" target="_blank" rel="noopener">@poznanskilove</a>
+    <a href="https://vimeo.com/poznanski" target="_blank" rel="noopener">Vimeo</a>
+  </div>
+
+  <div class="contact-quick">
+    <a class="quick-btn" href="https://wa.me/380668134871" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="quick-btn" href="https://t.me/+380668134871" target="_blank" rel="noopener">Telegram</a>
+    <a class="quick-btn" href="tel:+380668134871">+38 066 813 48 71</a>
+  </div>
+</section>
+
+<footer>
+  <span class="logo-small" aria-label="POZNANSKI">
+    <img src="assets/logo-black.png" alt="POZNANSKI">
+  </span>
+  <span>© 2010—2026 Artem Poznanski · Kyiv, Ukraine</span>
+</footer>
+
+<script>
+  function toggleLang() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-lang');
+    html.setAttribute('data-lang', current === 'en' ? 'uk' : 'en');
+    localStorage.setItem('poznanski-lang', html.getAttribute('data-lang'));
+  }
+
+  // Restore language preference
+  const savedLang = localStorage.getItem('poznanski-lang');
+  if (savedLang) {
+    document.documentElement.setAttribute('data-lang', savedLang);
+  }
+
+  // Smooth reveal on scroll for works
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${i * 0.1}s`;
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.work').forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(2rem)';
+    el.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+    observer.observe(el);
+  });
+
+  // Click handler for works — opens Vimeo or YouTube in modal
+  document.querySelectorAll('.work').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      const vimeo = el.getAttribute('data-vimeo');
+      const youtube = el.getAttribute('data-youtube');
+      const hash = el.getAttribute('data-vimeo-hash');
+      if (vimeo) {
+        e.preventDefault();
+        openVideoModal('vimeo', vimeo, hash);
+      } else if (youtube) {
+        e.preventDefault();
+        openVideoModal('youtube', youtube);
+      }
+      // If no video id, allow default href behavior (or do nothing)
+    });
+  });
+
+  function openVideoModal(platform, videoId, hash) {
+    // Create modal
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(0.75rem, 3vw, 2rem);
+      cursor: pointer;
+      animation: fadeIn 0.3s ease;
+    `;
+
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = `
+      position: relative;
+      width: 100%;
+      max-width: 1280px;
+      aspect-ratio: 16/9;
+      cursor: default;
+    `;
+    wrapper.onclick = (e) => e.stopPropagation();
+
+    const iframe = document.createElement('iframe');
+    let src;
+    if (platform === 'vimeo') {
+      // Vimeo with brand-aligned color (graphite), no chrome
+      src = `https://player.vimeo.com/video/${videoId}?autoplay=1&color=292728&title=0&byline=0&portrait=0`;
+      if (hash) {
+        src += `&h=${hash}`;
+      }
+    } else if (platform === 'youtube') {
+      // YouTube with minimal branding: no related videos, modest branding, no info bar
+      src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&color=white`;
+    }
+    iframe.src = src;
+    iframe.style.cssText = 'width: 100%; height: 100%; border: 0;';
+    iframe.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
+    iframe.allowFullscreen = true;
+
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '×';
+    closeBtn.style.cssText = `
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      background: transparent;
+      color: white;
+      border: none;
+      font-size: 2.5rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+      transition: opacity 0.2s;
+    `;
+    closeBtn.onmouseover = () => closeBtn.style.opacity = '0.6';
+    closeBtn.onmouseout = () => closeBtn.style.opacity = '1';
+    closeBtn.onclick = () => modal.remove();
+
+    wrapper.appendChild(iframe);
+    wrapper.appendChild(closeBtn);
+    modal.appendChild(wrapper);
+    modal.onclick = () => modal.remove();
+    document.body.appendChild(modal);
+
+    // Close on ESC
+    const escHandler = (e) => {
+      if (e.key === 'Escape') {
+        modal.remove();
+        document.removeEventListener('keydown', escHandler);
+      }
+    };
+    document.addEventListener('keydown', escHandler);
+  }
+
+  // Add fadeIn keyframe if not present
+  if (!document.querySelector('style[data-modal-styles]')) {
+    const style = document.createElement('style');
+    style.setAttribute('data-modal-styles', 'true');
+    style.textContent = `@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }`;
+    document.head.appendChild(style);
+  }
+
+  // Burger menu logic
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+  if (burger && navMenu) {
+    const closeMenu = () => {
+      burger.classList.remove('active');
+      navMenu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    };
+    burger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      burger.classList.toggle('active');
+      navMenu.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
+    });
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    // Close menu when clicking outside (on overlay or anywhere else)
+    document.addEventListener('click', (e) => {
+      if (document.body.classList.contains('menu-open') &&
+          !navMenu.contains(e.target) &&
+          !burger.contains(e.target)) {
+        closeMenu();
+      }
+    });
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+        closeMenu();
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

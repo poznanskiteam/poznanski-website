@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Artem Poznanski — Ukrainian cinematographer and documentary DP. Sixteen years behind the camera. Tribeca 2024, Odesa IFF 2025.">
+<meta name="author" content="Artem Poznanski">
+<meta name="theme-color" content="#292728">
+
+<!-- Open Graph -->
+<meta property="og:title" content="About — Artem Poznanski · POZNANSKI">
+<meta property="og:description" content="Sixteen years behind the camera. From wedding intimacy to Cannes red carpet. From Sumy to Cultural Forces frontlines.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://poznanski.team/about.html">
+<meta property="og:image" content="https://poznanski.team/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="POZNANSKI">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Artem Poznanski · POZNANSKI">
+<meta name="twitter:description" content="Sixteen years behind the camera. Cinematographer & Documentary DP.">
+<meta name="twitter:image" content="https://poznanski.team/assets/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+<title>About — Artem Poznanski · POZNANSKI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap">
+<style>
+  :root {
+    --graphite: #292728;
+    --white: #ffffff;
+    --gray-50: #f7f7f7;
+    --gray-100: #ededed;
+    --gray-200: #e5e5e5;
+    --gray-300: #d0d0d0;
+    --gray-500: #888;
+    --gray-700: #555;
+    --accent: #e85d3a;
+    --max-width: 1200px;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--graphite);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* === NAV === */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  nav .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  nav .logo img {
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  nav ul a {
+    color: var(--graphite);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+  }
+
+  nav ul a:hover {
+    opacity: 0.5;
+  }
+
+  nav ul a.active {
+    font-weight: 700;
+  }
+
+  .lang-toggle {
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border: 1px solid var(--graphite);
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    color: var(--graphite);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .lang-toggle:hover {
+    background: var(--graphite);
+    color: var(--white);
+  }
+
+  /* Burger button — hidden on desktop */
+  .burger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    color: var(--graphite);
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    z-index: 101;
+  }
+
+  .burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .burger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem var(--gutter);
+    }
+
+    nav ul {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 75%;
+      max-width: 320px;
+      background: var(--graphite);
+      color: var(--white);
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 4rem 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+      z-index: 99;
+    }
+
+    nav ul.open {
+      transform: translateX(0);
+    }
+
+    nav ul a {
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+
+    .burger {
+      display: flex;
+    }
+
+    .burger.active {
+      color: var(--white);
+    }
+
+    body.menu-open::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 98;
+      animation: fadeIn 0.3s ease;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* === MAIN === */
+  main {
+    padding-top: 8rem;
+  }
+
+  /* === HERO ABOUT === */
+  .about-hero {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: clamp(2rem, 6vh, 4rem) var(--gutter) clamp(3rem, 8vh, 5rem);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  .portrait-wrap {
+    position: sticky;
+    top: 8rem;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--graphite);
+  }
+
+  @media (max-width: 800px) {
+    .about-hero {
+      grid-template-columns: 1fr;
+      padding-top: 1rem;
+    }
+
+    .portrait-wrap {
+      position: static;
+      aspect-ratio: 4/5;
+      width: 80%;
+      max-width: 320px;
+      height: auto;
+      max-height: none;
+      margin: 0 auto;
+    }
+  }
+
+  .portrait-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .portrait-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2rem;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .portrait-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(232, 93, 58, 0.05), transparent 60%);
+  }
+
+  .about-intro h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-intro .role {
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    font-weight: 400;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.005em;
+  }
+
+  .about-intro .location {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+
+  .markers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray-700);
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.5rem;
+    background: var(--graphite);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .cta-btn:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .cta-btn.outline {
+    background: transparent;
+    color: var(--graphite);
+    border: 1px solid var(--graphite);
+  }
+
+  .cta-btn.outline:hover {
+    background: var(--graphite);
+    color: var(--white);
+  }
+
+  /* === STORY SECTIONS === */
+  .story {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: clamp(3rem, 8vh, 6rem) var(--gutter);
+  }
+
+  .story-block {
+    max-width: 42rem;
+    margin-bottom: clamp(2.5rem, 6vh, 4rem);
+  }
+
+  .story-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .story-block h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .story-block .label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .story-block .label::before {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .story-block p {
+    font-size: clamp(1rem, 1.15vw, 1.05rem);
+    line-height: 1.75;
+    margin-bottom: 1.1rem;
+    color: var(--gray-700);
+  }
+
+  .story-block p strong {
+    color: var(--graphite);
+    font-weight: 500;
+  }
+
+  /* === TIMELINE === */
+  .timeline-section {
+    background: var(--gray-50);
+    padding: clamp(3rem, 8vh, 6rem) var(--gutter);
+  }
+
+  .timeline-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .timeline-inner h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 3rem;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1.5rem 2rem;
+    max-width: 50rem;
+  }
+
+  @media (max-width: 600px) {
+    .timeline {
+      grid-template-columns: 4rem 1fr;
+      gap: 1rem 1.25rem;
+    }
+  }
+
+  .timeline-year {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--graphite);
+    letter-spacing: 0.05em;
+    padding-top: 0.1rem;
+  }
+
+  .timeline-event {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--gray-700);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .timeline-event strong {
+    color: var(--graphite);
+    font-weight: 500;
+  }
+
+  /* === FINAL CTA === */
+  .final-cta {
+    background: var(--graphite);
+    color: var(--white);
+    padding: clamp(4rem, 10vh, 8rem) var(--gutter);
+    text-align: center;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+  }
+
+  .final-cta p {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    color: rgba(255,255,255,0.7);
+    max-width: 36rem;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+
+  .final-cta .email-link {
+    display: inline-block;
+    font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+    font-weight: 400;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.4rem;
+    margin-bottom: 2.5rem;
+    transition: color 0.2s;
+  }
+
+  .final-cta .email-link:hover {
+    color: var(--accent);
+  }
+
+  .final-cta .channels {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  .final-cta .channels a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .final-cta .channels a:hover {
+    color: var(--white);
+  }
+
+  /* === FOOTER === */
+  footer {
+    border-top: 1px solid var(--gray-200);
+    padding: 2rem var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    letter-spacing: 0.1em;
+  }
+
+  footer .logo-small {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  footer .logo-small img {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* === LANG TOGGLE LOGIC === */
+  [data-lang-content="uk"] { display: none; }
+  html[data-lang="uk"] [data-lang-content="uk"] { display: revert; }
+  html[data-lang="uk"] [data-lang-content="en"] { display: none; }
+
+  html[data-lang="uk"] .timeline-event[data-lang-content="uk"],
+  html[data-lang="en"] .timeline-event[data-lang-content="en"] {
+    display: block;
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo" aria-label="POZNANSKI — home">
+    <img src="assets/logo-black.png" alt="POZNANSKI">
+  </a>
+  <ul id="nav-menu">
+    <li><a href="index.html#works" data-lang-content="en">Work</a><a href="index.html#works" data-lang-content="uk">Роботи</a></li>
+    <li><a href="about.html" class="active" data-lang-content="en">About</a><a href="about.html" class="active" data-lang-content="uk">Про</a></li>
+    <li><a href="index.html#contact" data-lang-content="en">Contact</a><a href="index.html#contact" data-lang-content="uk">Контакти</a></li>
+  </ul>
+  <button class="lang-toggle" onclick="toggleLang()">
+    <span data-lang-content="en">UA</span>
+    <span data-lang-content="uk">EN</span>
+  </button>
+  <button class="burger" id="burger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<main>
+
+  <!-- === ABOUT HERO === -->
+  <section class="about-hero">
+    <div class="portrait-wrap">
+      <div class="portrait-placeholder">
+        <span data-lang-content="en">Portrait coming soon</span>
+        <span data-lang-content="uk">Фото незабаром</span>
+      </div>
+      <img src="assets/portrait.jpg" alt="Artem Poznanski portrait" onerror="this.style.display='none'">
+    </div>
+
+    <div class="about-intro">
+      <h1>Artem Poznanski</h1>
+      <div class="role">
+        <span data-lang-content="en">Cinematographer & Documentary DP</span>
+        <span data-lang-content="uk">Кінематографіст і документальний оператор</span>
+      </div>
+      <div class="location">Kyiv, Ukraine · working worldwide</div>
+
+      <div class="markers">
+        <span>Tribeca 2024</span>
+        <span>
+          <span data-lang-content="en">Odesa IFF 2025</span>
+          <span data-lang-content="uk">Одеський МКФ 2025</span>
+        </span>
+        <span>Cannes 2025</span>
+        <span>NATO HQ 2025</span>
+      </div>
+
+      <div class="cta-row">
+        <a href="mailto:poznanskiteam@gmail.com" class="cta-btn">
+          <span data-lang-content="en">Get in touch</span>
+          <span data-lang-content="uk">Зв'язатися</span>
+        </a>
+        <a href="assets/poznanski-brand-foundation.pdf" class="cta-btn outline" download>
+          <span data-lang-content="en">Download CV</span>
+          <span data-lang-content="uk">Завантажити біо (PDF)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- === STORY === -->
+  <section class="story">
+
+    <div class="story-block">
+      <div class="label">
+        <span data-lang-content="en">The name</span>
+        <span data-lang-content="uk">Ім'я</span>
+      </div>
+
+      <div data-lang-content="en">
+        <p>POZNANSKI is my name and my practice — cinematography, documentary, production. Sixteen years and counting. One path.</p>
+        <p>It started in 2010 in Sumy as <strong>Vivat!</strong> — an event agency I built with Alina. I started at Sumy State University in 2003; Alina came a year later. We met that September of 2004, fell in love on the Maidan during the Orange Revolution that autumn, married in 2008. By 2010 we were filming weddings and corporate events across northeastern Ukraine.</p>
+        <p>In 2018 I rebranded the practice as <strong>POZNANSKIteam</strong> and we moved to Kyiv. The wedding side became <strong>@poznanskilove</strong>; the production line became <strong>POZNANSKIproduction</strong>. Two faces, one name.</p>
+      </div>
+
+      <div data-lang-content="uk">
+        <p>POZNANSKI — це ім'я і практика: кінематограф, документалка, продакшн. Шістнадцять років. Один шлях.</p>
+        <p>Усе почалося в 2010-му у Сумах як <strong>Vivat!</strong> — івент-агенція, яку ми зібрали з Аліною. Я вступив до Сумського державного університету в 2003-му, Аліна — на рік пізніше. Познайомились у вересні 2004-го, тієї ж осені закохались на Майдані під час Помаранчевої революції, одружились у 2008-му. На 2010 рік уже знімали весілля і корпоративи по північному сходу України.</p>
+        <p>У 2018-му зробив ребрендинг як <strong>POZNANSKIteam</strong> і переїхали в Київ. Весільний напрямок став <strong>@poznanskilove</strong>; продакшн-лінія — <strong>POZNANSKIproduction</strong>. Два обличчя, одне ім'я.</p>
+      </div>
+    </div>
+
+    <div class="story-block">
+      <div class="label">
+        <span data-lang-content="en">The work</span>
+        <span data-lang-content="uk">Робота</span>
+      </div>
+
+      <div data-lang-content="en">
+        <p>I shoot what holds people together. Weddings — sixteen years of intimacy, ritual, family. Documentary — when the story matters more than the image. Music videos — when the image becomes the story.</p>
+        <p>The brands I've worked with: Mondelez, Citroën, JDE, Wish Aqua & Spa, Marchenko Fitness, Praha Restaurant (resident videographer since 2018). The international institutions: British Council, Goethe-Institut, UNDP Ukraine, UNICEF Ukraine, World Central Kitchen.</p>
+        <p>My author films include <strong>"Tolerance Starts with Me"</strong> (2016, under a Grant from the President of Ukraine for Gifted Youth) and <strong>"Voice in the Water"</strong> (2023, shot on the day the Kakhovka Dam was destroyed).</p>
+      </div>
+
+      <div data-lang-content="uk">
+        <p>Я знімаю те, що тримає людей разом. Весілля — шістнадцять років інтимності, ритуалу, родини. Документалка — коли історія важливіша за зображення. Музичні відео — коли зображення стає історією.</p>
+        <p>Бренди з якими працював: Mondelez, Citroën, JDE, Wish Aqua & Spa, Marchenko Fitness, Praha Restaurant (постійний відеограф з 2018). Міжнародні інституції: British Council, Goethe-Institut, ПРООН Україна, ЮНІСЕФ Україна, World Central Kitchen.</p>
+        <p>Серед авторських фільмів — <strong>«Толерантність починається з мене»</strong> (2016, у рамках Гранту Президента України для обдарованої молоді) і <strong>«Voice in the Water»</strong> (2023, знято у день підриву Каховської ГЕС).</p>
+      </div>
+    </div>
+
+    <div class="story-block">
+      <div class="label">
+        <span data-lang-content="en">The frontline</span>
+        <span data-lang-content="uk">Фронт</span>
+      </div>
+
+      <div data-lang-content="en">
+        <p>From March 2023 to March 2026 I served in the Armed Forces of Ukraine as <strong>Head Operator of Cultural Forces</strong> — a unit that brings Ukrainian musicians and artists to combat brigades on the frontline. Three years. Awarded the Medal "For Distinguished Service, 3rd Class."</p>
+        <p>I was Lead DP on <strong>"Soldiers of Song"</strong> (Tribeca 2024) — a documentary about Ukrainian musicians keeping their country alive through music in wartime. Cinematographer on <strong>"In Thanks We Trust"</strong> (Odesa IFF 2025) — about Ukrainian veterans on a transatlantic tour of gratitude across America, featuring Sean Penn and Sting.</p>
+        <p>I was Lead DP on <strong>Frontline Studio Season 2</strong> — sixteen episodes, sixteen brigades, sixteen songs written together. Each episode is a portrait of a brigade and its people. MONATIK, Sasha Boole, alyona alyona, KOZAK SIROMAHA, PROBASS, Yurina, LELY45 — they all came with us to the frontline.</p>
+        <p>I demobilized in March 2026, after the birth of my third child.</p>
+      </div>
+
+      <div data-lang-content="uk">
+        <p>З березня 2023-го по березень 2026-го служив у Збройних Силах України як <strong>Головний оператор Культурних сил</strong> — підрозділ, що везе українських музикантів і артистів у бойові бригади на фронті. Три роки. Нагороджений медаллю «За особливу службу III ступеня».</p>
+        <p>Lead DP документалки <strong>«Soldiers of Song»</strong> (Tribeca 2024) — фільму про українських музикантів, які тримають країну живою через музику в час війни. Оператор <strong>«In Thanks We Trust»</strong> (Одеський МКФ 2025) — про турне українських ветеранів-артистів по США за участі Шона Пенна і Стінга.</p>
+        <p>Lead DP <strong>2-го сезону Фронтової студії</strong> — шістнадцять епізодів, шістнадцять бригад, шістнадцять пісень, написаних спільно. Кожен епізод — портрет бригади і її людей. MONATIK, Sasha Boole, alyona alyona, KOZAK SIROMAHA, PROBASS, Юріна, LELY45 — усі вони поїхали з нами на фронт.</p>
+        <p>Демобілізувався у березні 2026-го, після народження третьої дитини.</p>
+      </div>
+    </div>
+
+    <div class="story-block">
+      <div class="label">
+        <span data-lang-content="en">The places</span>
+        <span data-lang-content="uk">Місця</span>
+      </div>
+
+      <div data-lang-content="en">
+        <p>I've filmed in twenty-two countries — from Egypt to Iceland, from Macedonia to the United States. The U.S. tours for "In Thanks We Trust" alone covered more than a hundred events across two trips: the U.S. Congress, Carnegie Hall, New York to Los Angeles, Miami to Seattle.</p>
+        <p>In 2024, at Sean Penn's home in Los Angeles, my brother-in-arms Taras Stolyar played Sting's <em>Shape of My Heart</em> on the bandura. The next day he joined Sting on stage at a solo concert in LA. Metallica reposted his bandura cover of <em>Nothing Else Matters</em> to their 12-million followers.</p>
+        <p>In 2025 I was at <strong>NATO HQ in Brussels</strong> on the third anniversary of the full-scale invasion, at the <strong>EU-Ukraine Business Summit</strong>, and at <strong>Cannes</strong> for the premiere of "Bono: Stories of Surrender" — invited personally by Bono.</p>
+      </div>
+
+      <div data-lang-content="uk">
+        <p>Знімав у двадцяти двох країнах — від Єгипту до Ісландії, від Македонії до Сполучених Штатів. Лише два тури США для «In Thanks We Trust» покрили понад сто подій: Конгрес США, Карнегі-холл, Нью-Йорк до Лос-Анджелеса, Маямі до Сіетла.</p>
+        <p>У 2024-му в домі Шона Пенна в Лос-Анджелесі мій побратим Тарас Столяр зіграв Стінгу <em>Shape of My Heart</em> на бандурі. Наступного дня він вийшов з Стінгом на сцену сольного концерту в LA. Metallica репостнули його бандурний кавер <em>Nothing Else Matters</em> своїм 12-мільйонним підписникам.</p>
+        <p>У 2025-му був у <strong>штаб-квартирі НАТО в Брюсселі</strong> на третю річницю повномасштабного вторгнення, на <strong>Бізнес-саміті ЄС-Україна</strong>, і в <strong>Каннах</strong> на прем'єрі «Bono: Stories of Surrender» — за особистим запрошенням Боно.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- === TIMELINE === -->
+  <section class="timeline-section">
+    <div class="timeline-inner">
+      <h2>
+        <span data-lang-content="en">Sixteen years, in points</span>
+        <span data-lang-content="uk">Шістнадцять років, у точках</span>
+      </h2>
+
+      <div class="timeline">
+        <div class="timeline-year">2003</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">Started studying marketing at Sumy State University.</span>
+          <span data-lang-content="uk">Почав вивчати маркетинг у Сумському державному університеті.</span>
+        </div>
+
+        <div class="timeline-year">2004</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">Alina enrolled at the same university a year later. We met that September, and that autumn — on the Maidan, during the Orange Revolution — we fell in love.</span>
+          <span data-lang-content="uk">Аліна вступила в той самий університет на рік пізніше. Познайомились у вересні, а тієї ж осені — на Майдані, під час Помаранчевої революції — закохались.</span>
+        </div>
+
+        <div class="timeline-year">2008</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">Married Alina on August 8.</span>
+          <span data-lang-content="uk">Одружились з Аліною 8 серпня.</span>
+        </div>
+
+        <div class="timeline-year">2010</div>
+        <div class="timeline-event">
+          <span data-lang-content="en"><strong>Vivat!</strong> founded — our event agency in Sumy. First commercial shoots.</span>
+          <span data-lang-content="uk">Заснували <strong>Vivat!</strong> — нашу івент-агенцію у Сумах. Перші комерційні зйомки.</span>
+        </div>
+
+        <div class="timeline-year">2013</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">First international client — Macedonia.</span>
+          <span data-lang-content="uk">Перший зарубіжний клієнт — Македонія.</span>
+        </div>
+
+        <div class="timeline-year">2016</div>
+        <div class="timeline-event">
+          <span data-lang-content="en"><strong>"Tolerance Starts with Me"</strong> — short film under a Grant from the President of Ukraine for Gifted Youth.</span>
+          <span data-lang-content="uk"><strong>«Толерантність починається з мене»</strong> — короткометражний фільм у рамках Гранту Президента України для обдарованої молоді.</span>
+        </div>
+
+        <div class="timeline-year">2017</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">Moved to Kyiv.</span>
+          <span data-lang-content="uk">Переїхали до Києва.</span>
+        </div>
+
+        <div class="timeline-year">2018</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">Rebranded as <strong>POZNANSKIteam</strong>. Praha Restaurant — resident videographer since this year.</span>
+          <span data-lang-content="uk">Ребрендинг у <strong>POZNANSKIteam</strong>. Praha Restaurant — постійний відеограф з цього року.</span>
+        </div>
+
+        <div class="timeline-year">2019</div>
+        <div class="timeline-event">
+          <span data-lang-content="en"><strong>@poznanskilove</strong> launched as a separate wedding brand.</span>
+          <span data-lang-content="uk">Запустили <strong>@poznanskilove</strong> як окремий весільний бренд.</span>
+        </div>
+
+        <div class="timeline-year">2020</div>
+        <div class="timeline-event">
+          <span data-lang-content="en"><strong>"We Are"</strong> — author social documentary, directed by Alina. British Council support.</span>
+          <span data-lang-content="uk"><strong>«Ми Є»</strong> — авторський соціальний документальний фільм, режисер Аліна. За підтримки British Council.</span>
+        </div>
+
+        <div class="timeline-year">2022</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">Full-scale Russian invasion begins. <strong>"We Are From Ukraine!"</strong> — Independence Day music video.</span>
+          <span data-lang-content="uk">Початок повномасштабного вторгнення росії. <strong>«Ми з України!»</strong> — кліп до Дня Незалежності.</span>
+        </div>
+
+        <div class="timeline-year">2023</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">Mobilized to the Armed Forces of Ukraine. Joined <strong>Cultural Forces</strong> as Head Operator. <strong>"Voice in the Water"</strong> — author short, filmed on June 6, the day the Kakhovka Dam was destroyed.</span>
+          <span data-lang-content="uk">Мобілізувався у ЗСУ. Долучився до <strong>Культурних сил</strong> як Головний оператор. <strong>«Voice in the Water»</strong> — авторське відео, знято 6 червня, у день підриву Каховської ГЕС.</span>
+        </div>
+
+        <div class="timeline-year">2024</div>
+        <div class="timeline-event">
+          <span data-lang-content="en"><strong>"Soldiers of Song"</strong> — Tribeca Film Festival premiere. Lead DP. Two U.S. tours for <strong>"In Thanks We Trust"</strong>. Awarded the Medal "For Distinguished Service, 3rd Class."</span>
+          <span data-lang-content="uk"><strong>«Soldiers of Song»</strong> — прем'єра Tribeca Film Festival. Lead DP. Два тури США для <strong>«In Thanks We Trust»</strong>. Нагороджений медаллю «За особливу службу III ступеня».</span>
+        </div>
+
+        <div class="timeline-year">2025</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">NATO HQ Brussels · EU-Ukraine Business Summit · Cannes (invited by Bono for "Stories of Surrender") · Odesa IFF premiere of "In Thanks We Trust" · <strong>Frontline Studio Season 2</strong> as Lead DP.</span>
+          <span data-lang-content="uk">Штаб-квартира НАТО Брюссель · Бізнес-саміт ЄС-Україна · Канни (за запрошенням Боно на «Stories of Surrender») · Прем'єра «In Thanks We Trust» в Одесі · <strong>Фронтова студія 2-й сезон</strong> як Lead DP.</span>
+        </div>
+
+        <div class="timeline-year">2026</div>
+        <div class="timeline-event">
+          <span data-lang-content="en">Demobilized in March, after the birth of my third child. Returning to the camera in peace.</span>
+          <span data-lang-content="uk">Демобілізувався у березні, після народження третьої дитини. Повертаюсь до камери у мирному житті.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === FINAL CTA === -->
+  <section class="final-cta">
+    <h2>
+      <span data-lang-content="en">Let's work together.</span>
+      <span data-lang-content="uk">Спрацюємось.</span>
+    </h2>
+    <p>
+      <span data-lang-content="en">Documentary, narrative, music video, brand work. Ukraine, Europe, the United States. Get in touch — I read every message.</span>
+      <span data-lang-content="uk">Документалка, наратив, музичні відео, бренд-роботи. Україна, Європа, США. Напишіть — я читаю кожне повідомлення.</span>
+    </p>
+    <a href="mailto:poznanskiteam@gmail.com" class="email-link">poznanskiteam@gmail.com</a>
+    <div class="channels">
+      <a href="https://www.linkedin.com/in/artem-poznanski-a6116361" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/poznanskiy_production/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://vimeo.com/poznanski" target="_blank" rel="noopener">Vimeo</a>
+      <a href="index.html#works" data-lang-content="en">Work</a>
+      <a href="index.html#works" data-lang-content="uk">Роботи</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="logo-small" aria-label="POZNANSKI">
+    <img src="assets/logo-black.png" alt="POZNANSKI">
+  </span>
+  <span>© 2010—2026 Artem Poznanski · Kyiv, Ukraine</span>
+</footer>
+
+<script>
+  function toggleLang() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-lang');
+    html.setAttribute('data-lang', current === 'en' ? 'uk' : 'en');
+    localStorage.setItem('poznanski-lang', html.getAttribute('data-lang'));
+  }
+
+  const savedLang = localStorage.getItem('poznanski-lang');
+  if (savedLang) {
+    document.documentElement.setAttribute('data-lang', savedLang);
+  }
+
+  // Burger menu logic
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+  if (burger && navMenu) {
+    const closeMenu = () => {
+      burger.classList.remove('active');
+      navMenu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    };
+    burger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      burger.classList.toggle('active');
+      navMenu.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('click', (e) => {
+      if (document.body.classList.contains('menu-open') &&
+          !navMenu.contains(e.target) &&
+          !burger.contains(e.target)) {
+        closeMenu();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+        closeMenu();
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
