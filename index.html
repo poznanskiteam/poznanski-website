@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Artem Poznanski — Cinematographer & Documentary DP. Tribeca 2024, Odesa IFF 2025. Founder of POZNANSKI.">
-<meta name="author" content="Artem Poznanski">
+<meta name="description" content="Artem Poznanskyi — Cinematographer & Documentary DP. Tribeca 2024, Odesa IFF 2025. Founder of POZNANSKI.">
+<meta name="author" content="Artem Poznanskyi">
 <meta name="theme-color" content="#292728">
 
 <!-- Open Graph (Facebook, LinkedIn, Telegram) -->
-<meta property="og:title" content="POZNANSKI — Artem Poznanski">
+<meta property="og:title" content="POZNANSKI — Artem Poznanskyi">
 <meta property="og:description" content="Cinematographer & Documentary DP. Tribeca 2024, Odesa IFF 2025.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://poznanski.team">
@@ -19,7 +19,7 @@
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="POZNANSKI — Artem Poznanski">
+<meta name="twitter:title" content="POZNANSKI — Artem Poznanskyi">
 <meta name="twitter:description" content="Cinematographer & Documentary DP. Tribeca 2024, Odesa IFF 2025.">
 <meta name="twitter:image" content="https://poznanski.team/assets/og-image.png">
 
@@ -31,7 +31,7 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 
-<title>POZNANSKI — Artem Poznanski</title>
+<title>POZNANSKI — Artem Poznanskyi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap">
@@ -79,11 +79,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--white);
+  }
+
+  /* Glass background via pseudo-element so backdrop-filter doesn't create a containing block for fixed children */
+  nav::after {
+    content: '';
+    position: absolute;
+    inset: 0;
     background: rgba(41, 39, 40, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    color: var(--white);
-    transition: background 0.3s;
+    z-index: -1;
   }
 
   nav .logo {
@@ -190,13 +197,14 @@
       background: var(--graphite);
       color: var(--white);
       flex-direction: column;
-      justify-content: center;
-      gap: 2.5rem;
-      padding: 4rem 2rem;
+      justify-content: flex-start;
+      gap: 2rem;
+      padding: 6rem 2rem 2rem;
       transform: translateX(100%);
       transition: transform 0.3s ease;
       box-shadow: -10px 0 30px rgba(0,0,0,0.2);
       z-index: 99;
+      overflow-y: auto;
     }
 
     nav ul.open {
@@ -914,7 +922,7 @@
   <span class="logo-small" aria-label="POZNANSKI">
     <img src="assets/logo-black.png" alt="POZNANSKI">
   </span>
-  <span>© 2010—2026 Artem Poznanski · Kyiv, Ukraine</span>
+  <span>© 2010—2026 Artem Poznanskyi · Kyiv, Ukraine</span>
 </footer>
 
 <script>
@@ -925,10 +933,17 @@
     localStorage.setItem('poznanski-lang', html.getAttribute('data-lang'));
   }
 
-  // Restore language preference
+  // On page load: detect saved or browser language
   const savedLang = localStorage.getItem('poznanski-lang');
   if (savedLang) {
     document.documentElement.setAttribute('data-lang', savedLang);
+  } else {
+    // Auto-detect from browser language
+    const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if (browserLang.startsWith('uk') || browserLang.startsWith('ru')) {
+      document.documentElement.setAttribute('data-lang', 'uk');
+    }
+    // else stay with default 'en'
   }
 
   // Smooth reveal on scroll for works
