@@ -786,8 +786,8 @@
       </div>
     </a>
 
-    <!-- Work 4: Soldiers of Song -->
-    <a class="work" href="https://vimeo.com/1002569297" data-vimeo="1002569297" target="_blank" rel="noopener">
+    <!-- Work 4: Soldiers of Song — opens on vimeo.com because embed is restricted by the film's official channel -->
+    <a class="work" href="https://vimeo.com/1002569297" target="_blank" rel="noopener">
       <div class="work-thumb">
         <img src="https://vumbnail.com/1002569297.jpg" alt="Soldiers of Song teaser preview" loading="lazy">
       </div>
@@ -1010,14 +1010,15 @@
     const iframe = document.createElement('iframe');
     let src;
     if (platform === 'vimeo') {
-      // Vimeo with brand-aligned color (graphite), no chrome
-      src = `https://player.vimeo.com/video/${videoId}?autoplay=1&color=292728&title=0&byline=0&portrait=0`;
+      // Vimeo with brand-aligned color (graphite), no chrome.
+      // No autoplay so user can press play and get sound on all devices (mobile browsers block autoplay+sound).
+      src = `https://player.vimeo.com/video/${videoId}?color=292728&title=0&byline=0&portrait=0`;
       if (hash) {
         src += `&h=${hash}`;
       }
     } else if (platform === 'youtube') {
       // YouTube with minimal branding: no related videos, modest branding, no info bar
-      src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&color=white`;
+      src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&color=white`;
     }
     iframe.src = src;
     iframe.style.cssText = 'width: 100%; height: 100%; border: 0;';
